@@ -33,8 +33,10 @@
                             <td>{{$product->price}}</td>
                             <td>{{$product->option}}</td>
                             <td>
-                            <a class="btn btn-primary" href="{{route('productForm',$product->id)}}" role="button">Add Products</a> <a class="btn btn-primary" href="{{route('editProduct',$product->id)}}" role="button">Edit Products</a>
-                           <td><a href="{{route('deleteProduct',$product->id)}}" class="btn btn-danger" role="button">Delete</a></td>
+                                <a class="btn btn-primary" href="{{route('productForm',$product->id)}}" role="button">Add Products</a>
+                                 <a class="btn btn-primary" href="{{route('adminEdit',$product->id)}}" role="button">Edit Products</a>
+                                <a class="btn btn-danger" href="{{route('delete',$product->id)}}"  role="button">Delete</a>
+                            </td>
                         </tr>
                       @endforeach
                     </tbody>

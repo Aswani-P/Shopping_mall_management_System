@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                 <a class="btn btn-dark" href="{{route('userTable')}}" role="button">Show Users</a>
                 <a class="btn btn-dark" href="{{route('showShop')}}" role="button">Show Pending Status</a>
-                <a class="btn btn-dark" href="{{route('viewProducts')}}" role="button">Show Products</a>
+                <a class="btn btn-dark" href="{{route('AllProduct')}}" role="button">Show Products</a>
                 
             </div>
            

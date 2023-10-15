@@ -85,6 +85,30 @@ class AdminController extends Controller
         return view('admin.showProducts',compact('products'));
 
     }
+   public function deleteadminsideProduct($id)
+   {
+    $id = request('id');
+    $products = Product::find($id);
+    $products->delete();
+    return view('admin.showProducts',compact('products'));
+    
+   }
 
+   public function updateAdminProductForm($id){
+    $products = Product::find($id);
+    return view('admin.adminSideedit',compact('products','id'));
+
+}
+   public function updateAdminProduct(){
+    $id = request('id');
+    $products = Product::find($id);
+    $products->update([
+        'product_name'=>request('products'),
+        'category'=>request('category'),
+        'price'=>request('price'),
+        'option'=>request('option')
+    ]);
+    return redirect()->route('AllProduct')->with('message','product details updated');
+}
 
 }

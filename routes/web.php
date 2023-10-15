@@ -35,7 +35,10 @@ Route::post('saved',[AdminController::class,'saveTo'])->name('saved');
 Route::get('delete/{id}',[AdminController::class,'deleteShops'])->name('deleteShops');
 Route::get('deleteUser/{id}',[AdminController::class,'userDelete'])->name('userdelete');
 Route::get('deleteShop/{id}',[AdminController::class,'deleteShop'])->name('deleteShop');
-Route::get('all-products',[AdminController::class,'viewAllProducts'])->name('viewProducts');
+Route::get('all-products',[AdminController::class,'viewAllProducts'])->name('AllProduct');
+Route::get('deleteProducts/{id}',[AdminController::class,'deleteadminsideProduct'])->name('delete');
+Route::post('adminUpdat',[AdminController::class,'updateAdminProduct'])->name('adminUpdate');
+Route::get('adminEdit/{id}',[AdminController::class,'updateAdminProductForm'])->name('adminEdit');
 
 //shop side route
 Route::get('shopRegisterForm',[ShopController::class,'registerForm'])->name('form');

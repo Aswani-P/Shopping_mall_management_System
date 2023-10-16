@@ -39,6 +39,11 @@ Route::get('all-products',[AdminController::class,'viewAllProducts'])->name('All
 Route::get('deleteProducts/{id}',[AdminController::class,'deleteadminsideProduct'])->name('delete');
 Route::post('adminUpdat',[AdminController::class,'updateAdminProduct'])->name('adminUpdate');
 Route::get('adminEdit/{id}',[AdminController::class,'updateAdminProductForm'])->name('adminEdit');
+Route::get('product-list',[AdminController::class,'pdfDownload'])->name('product_list');
+
+
+
+
 
 //shop side route
 Route::get('shopRegisterForm',[ShopController::class,'registerForm'])->name('form');

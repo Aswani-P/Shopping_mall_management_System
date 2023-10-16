@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Shop;
@@ -109,6 +110,12 @@ class AdminController extends Controller
         'option'=>request('option')
     ]);
     return redirect()->route('AllProduct')->with('message','product details updated');
+}
+
+public function pdfDownload(){
+    $products = Product::all();
+    $pdf = Pdf::loadView('admin.pdf',['products'=>$products]);
+    return $pdf->download('products.pdf');
 }
 
 }
